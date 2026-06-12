@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yogi & Ukhti</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f8f5ef;
+    color:#333;
+    text-align:center;
+}
+
+.hero{
+    padding:50px 20px;
+}
+
+h1{
+    color:#b08d57;
+    font-size:55px;
+}
+
+.photos{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.photo{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #d4af37;
+}
+
+.card{
+    background:white;
+    max-width:700px;
+    margin:30px auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.btn{
+    background:#b08d57;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.prank{
+    display:none;
+    margin-top:20px;
+    padding:20px;
+    background:#fff3cd;
+    border-radius:15px;
+}
+
+.countdown{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:15px;
+    color:#b08d57;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h3>Undangan Pernikahan</h3>
+<h1>Yogi & Ukhti</h1>
+
+<div class="photos">
+<img src="yogi.jpg" class="photo">
+<img src="ukhti.jpg" class="photo">
+</div>
+
+<div class="countdown" id="countdown"></div>
+</div>
+
+<div class="card">
+<h2>Akad Nikah</h2>
+<p>Sabtu, 20 Juni 2026</p>
+<p>09.00 WIB</p>
+<p>Masjid Nurul Iman</p>
+
+<h2>Resepsi</h2>
+<p>11.00 WIB</p>
+<p>Gedung Serbaguna Bahagia</p>
+
+<button class="btn" onclick="showPrank()">
+Konfirmasi Kehadiran
+</button>
+
+<div class="prank" id="prank">
+<h2>🎉 SURPRISE 🎉</h2>
+<p><b>Tidak ada akad.</b></p>
+<p><b>Tidak ada resepsi.</b></p>
+<p><b>Tidak ada Ukhti.</b></p>
+<p><b>Gera karawin😂</b></p>
+</div>
+</div>
+
+<script>
+
+function showPrank(){
+document.getElementById("prank").style.display="block";
+}
+
+const target=new Date("June 20, 2026 09:00:00").getTime();
+
+setInterval(()=>{
+const now=new Date().getTime();
+const distance=target-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("countdown").innerHTML=
+"💍 Menuju Hari Bahagia: "+days+" Hari";
+},1000);
+
+</script>
+
+</body>
+</html>
